@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "galeries",
+  "info": {
+    "singularName": "galerie",
+    "pluralName": "galeries",
+    "displayName": "galerie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "galery"
+    }
+  }
+}
